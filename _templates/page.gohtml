@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+{{template "head.gohtml" .}}
+<body data-pageid="{{.ID}}" data-pagetitle="{{.Title}}">
+{{template "header.gohtml" .}}
+<div class="content-wrapper">
+    {{template "page_content.gohtml" .}}
+    <br/>
+    {{template "footer.gohtml" .}}
+</div>
+{{template "js.gohtml" .}}
+</body>
+</html>

@@ -1,0 +1,10 @@
+<article id="article">
+    <br/>
+    <h1>{{.Title}}</h1>
+    {{if .CreationTime}}
+        <div class="published-date">{{.CreationTime.Format "Jan 02, 2006"}}</div>
+    {{end}}
+    <br/>
+    <br/>
+    {{.Content}}
+</article>

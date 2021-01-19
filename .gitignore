@@ -1,0 +1,11 @@
+.idea/
+goshop.iml
+pgdata/
+pgadmin/
+logger
+logs
+log.json
+./goshop
+goshop
+__debug_bin
+_uploads/**

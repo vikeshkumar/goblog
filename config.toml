@@ -1,0 +1,64 @@
+output = "models"
+wipe = false
+
+[psql]
+dbname = "dshop"
+host = "localhost"
+port = 5432
+user = "dshop"
+pass = "S3cr3t@21"
+schema = "public"
+sslmode = "disable"
+
+[server]
+development = true
+listenOn = '127.0.0.1:8080'
+writeTimeout = 6000
+readTimeout = 6000
+execPathDir = "/home/vikesh/go/src/github.com/vikeshkumar/goblog/"
+fileUploadDirectory = "/home/vikesh/go/src/github.com/vikeshkumar/goblog/_uploads/"
+appUrl= "http://localhost:8080/"
+uploadPath = "uploads/"
+
+[site]
+favicon = "_ui/favicon.ico"
+robots = "robots.txt"
+
+[db]
+url = 'postgres://dshop:S3cr3t@21@localhost:5432/dshop'
+host = 'localhost'
+port = 5432
+user = 'dshop'
+password = 'S3cr3t@21'
+name = 'dshop'
+maxconnection = 100
+minconnection = 50
+healthcheckperiod = 60000
+
+[template]
+suffix = ".gohtml"
+root = "_templates/"
+favicon = "_ui/favicon.ico"
+
+[static]
+path = "_ui/"
+prefix = "/_ui/"
+
+[admin]
+path = "_admin/"
+prefix = "/admin/"
+
+[uploads]
+path = "_uploads/"
+prefix = "/uploads/"
+
+
+[bcrypt]
+cost = 12
+
+[api]
+[api.cookie]
+validity = 120
+path = "/"
+domain = "localhost"
+name = "session"

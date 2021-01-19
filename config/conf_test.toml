@@ -1,0 +1,13 @@
+z = "z"
+duration = 10
+[a]
+b = "b"
+c = "c"
+
+[d]
+[d.e]
+f = "f"
+g = "g"
+
+[server]
+duration = 10

@@ -1,0 +1,13 @@
+<section id="article-listing">
+{{range .Posts}}
+        <a href="/post/{{.Url}}">
+            <div class="article-card">
+                <h1>{{.Title}}</h1>
+                <div class="published-date">{{.CreationTime.Format "Jan 02, 2006"}}</div>
+                <hr/>
+                {{.Summary}}
+            </div>
+        </a>
+{{end}}
+</section>
+
