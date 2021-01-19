@@ -38,7 +38,8 @@ func Connect() error {
 	//	ConnConfig: parseConfig,
 	//}
 	//pgx.Conn
-	conn, connectError := pgxpool.Connect(context.Background(), cfg.GetString(config.ServerDbUrl))
+	dbUrl := cfg.GetString(config.ServerDbUrl)
+	conn, connectError := pgxpool.Connect(context.Background(), dbUrl)
 	db = conn
 	return connectError
 }

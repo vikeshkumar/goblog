@@ -49,7 +49,7 @@ func (u *UserService) FindUserForCookieValue(token string) (dto.User, error) {
 func (u *UserService) RegisterNewUser(form *dto.RegistrationForm) error {
 	var count int
 	ctx := context.Background()
-	totalUserError := db.QueryRow(ctx, FindTotalUserQuery, form.Username, form.Email).Scan(&count)
+	totalUserError := db.QueryRow(ctx, FindTotalUserQuery).Scan(&count)
 	if totalUserError != nil || count > 0 {
 		return errors.New("sorry, new users not allowed at this time")
 	}
@@ -65,7 +65,7 @@ func (u *UserService) RegisterNewUser(form *dto.RegistrationForm) error {
 	userName := form.Username
 	randomSalt := uuid.New().String()
 	saltedUserName := strings.Join([]string{userName, randomSalt}, "")
-	hashedPassword, hashError := bcrypt.GenerateFromPassword([]byte(saltedUserName), cfg.GetInt(config.BcryptCost))
+	hashedPassword, hashError := bcrypt.GenerateFromPassword([]byte(saltedUserName), config.Get().GetInt(config.BcryptCost))
 	if hashError != nil {
 		return errors.New("error creating a new user at this time")
 	}

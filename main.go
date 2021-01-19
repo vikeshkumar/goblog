@@ -26,7 +26,7 @@ func main() {
 	router := mux.NewRouter()
 	connectError := db.Connect()
 	if connectError != nil {
-		log.Fatal("failed to connect to database", err)
+		log.Fatal("failed to connect to database", connectError)
 	}
 	webpage.AddHandlers(router)
 	api.AddHandlers(router)
