@@ -12,6 +12,6 @@ require (
 	github.com/sirupsen/logrus v1.7.0
 	github.com/spf13/jwalterweatherman v1.0.0
 	github.com/spf13/viper v1.7.1
-	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
+	golang.org/x/crypto v0.1.0
 	gorm.io/driver/postgres v1.0.6
 )
